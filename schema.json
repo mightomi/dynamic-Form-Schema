@@ -1,0 +1,82 @@
+
+{
+    "allPagesSchema": [
+
+        {
+            "imageUrl": "http://url/to/image1.jpg",
+            "questionHeader": "First, the basics ",
+            "formType": "multiForm",
+            "formSchema": [
+                {    
+                    "responseType": "number",
+                    "questionId": "ageInYears",
+                    "placeholder": "bettween 18 to 90",
+                    "questionText": "WHAT IS YOUR AGE?",
+                    "responseRangeMin": 18,
+                    "responseRangeMax": 90,
+                    "mandatory": true,
+                    "hasFollowUpQuestions": false
+                }, 
+                {
+                    "responseType": "dropdown",
+                    "questionId": "cityYouLiveIn",
+                    "placeholder": "choose",
+                    "questionText": "WHICH CITY DO YOU LIVE IN?",
+                    "mandatory": true,
+                    "optionToClear": true,
+                    "hasFollowUpQuestions": false,
+                    "dropdownOptions": ["Kolkata", "Mumbai", "Goa"]
+                },
+                {
+                    "responseType": "dropdown",
+                    "questionId": "genderAtBirth",
+                    "placeholder": "choose",
+                    "questionText": "WHAT WAS YOUR BIOLOGICAL GENDER AT BIRTH?",
+                    "mandatory": true,
+                    "optionToClear": false,
+                    "dropdownOptions": ["Male", "Female"],
+                    "hasFollowUpQuestions": true,
+                    "followUpQuestions": {
+                        "Female": [
+                            {    
+                                "responseType": "dropdown",
+                                "questionId": "isPregnant",
+                                "placeholder": "choose",
+                                "questionText": "ARE YOU PREGNANT?",
+                                "mandatory": true,
+                                "optionToClear": true,
+                                "dropdownOptions": ["Yes", "No"]
+                            }
+                        ],
+                        "Male": []
+                    }
+                }
+
+            ]
+
+        },
+
+        {
+            "imageUrl": "http//url/to/image2.jpg",
+            "questionHeader": "work life balance ",
+            "formType": "multiForm",
+            "formSchema": [
+                {    
+                    "responseType": "scale",
+                    "questionId": "stressLevel",
+                    "questionText": "WHAT IS YOUR stress level (1-10)?",
+                    "scaleType": "linear",
+                    "MinScaleValue": 0,
+                    "MaxScaleValue": 10,
+                    "incrementValue": 1,
+                    "scaleInitialValue": 7,
+                    "scalePlaceholderLeft": "chill",
+                    "scalePlaceholderRight": "neurotic",
+                    "mandatory": true,
+                    "hasFollowUpQuestions": false
+                }
+            ]
+        }
+
+    ]
+}
